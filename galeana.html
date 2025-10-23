@@ -42,6 +42,11 @@
         font-family: 'Galeana', Arial, sans-serif;
     }
 
+    .text-block {
+        font-family: 'Galeana', Arial, sans-serif;
+        margin: 0;
+    }
+
     .button-main-container{
         display: flex;
         width: 40%;
@@ -343,14 +348,14 @@
 <div class="font-tester-container">
     <div class="main-container">
         <div class="text-container">
-            <p class="text-block" style="font-family: 'Galeana';">
+            <p class="text-block">
                 AaBbCc<br>
                 0123456789<br>
                 {(!¿@#$!?)}
             </p>
 
             <div class="font-type-container-absolute">
-                <select id="fontStyleSecond" onchange="updateFont()">
+                <select id="fontStyleAbsolute" onchange="updatePreviewFont()">
                     <option value="Compressed">Compressed</option>
                     <option value="Condensed">Condensed</option>
                     <option value="Extended">Extended</option>
@@ -449,7 +454,7 @@
 
             <div class="control-group">
                 <div class="container-multiple-controls">
-                    <label for="lineHeight">Leading</label>
+                    <label for="lineHeight">Interlineado</label>
                     <input type="range" id="lineHeight" min="0.8" max="3" step="0.1" value="1.6" oninput="updateFont()">
                     <span id="lineHeightValue">1.6</span>
                 </div>
@@ -592,6 +597,31 @@ Después de una pausa —de apenas 3 minutos—, alguien marcó en el cuaderno: 
             editor.style.color = '#ffffff';
             buttonSecondary.style.backgroundColor = '#ffffff';
             buttonSecondary.style.color = '#202020';
+        }
+    }
+
+    function updatePreviewFont() {
+        const fontStyleAbsolute = document.getElementById("fontStyleAbsolute");
+        const style = fontStyleAbsolute.value;
+
+        // Map style names to actual font-family names
+        const styleMap = {
+            "Standard": "Galeana",
+            "Compressed": "Galeana-Compressed",
+            "Condensed": "Galeana-Condensed",
+            "Extended": "Galeana-Extended"
+        };
+
+        const fontFamily = styleMap[style] || "Galeana";
+
+        console.log("Updating preview font to:", fontFamily);
+
+        // Only update the text-block preview element
+        if (previewText) {
+            previewText.style.fontFamily = fontFamily;
+            console.log("Preview text updated successfully");
+        } else {
+            console.error("previewText element not found");
         }
     }
 
