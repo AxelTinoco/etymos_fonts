@@ -1,0 +1,616 @@
+/* Fuentes */
+
+/* Fondue */
+@font-face {
+    font-family: "Fondue";
+    src: url("https://static1.squarespace.com/static/66d36794d3823c35349db01a/t/68e84a0ce3f74f643306fbf0/1760053773832/Fondue-Thin.ttf")
+        format("truetype");
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Fondue";
+    src: url("https://static1.squarespace.com/static/66d36794d3823c35349db01a/t/68e84a0cde11b55a67b08c6a/1760053773566/Fondue-Light.ttf")
+        format("truetype");
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Fondue";
+    src: url("https://static1.squarespace.com/static/66d36794d3823c35349db01a/t/68e84a0c5088df50b193b858/1760053773092/Fondue-Regular.ttf")
+        format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Fondue";
+    src: url("https://static1.squarespace.com/static/66d36794d3823c35349db01a/t/68e84a0ce3f74f643306fbf1/1760053773726/Fondue-Bold.ttf")
+        format("truetype");
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Fondue";
+    src: url("https://static1.squarespace.com/static/66d36794d3823c35349db01a/t/68e84a0c781e517ab33319aa/1760053772669/Fondue-UltraBold.ttf")
+        format("truetype");
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Fondue";
+    src: url("https://static1.squarespace.com/static/66d36794d3823c35349db01a/t/68e84a0cf9f51d21d81702ff/1760053773624/Fondue-Heavy.ttf")
+        format("truetype");
+    font-weight: 900;
+    font-style: normal;
+}
+/* Fondue */
+
+
+/* Galeana */
+@font-face {
+    font-family: "Galeana";
+    src: url("https://static1.squarespace.com/static/66d36794d3823c35349db01a/t/68e848d21aaa033835009d31/1760053458404/GaleanaStandard-Thin.ttf")
+        format("truetype");
+    font-weight: 100;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Galeana";
+    src: url("https://static1.squarespace.com/static/66d36794d3823c35349db01a/t/68e8489e82da536e39d90b73/1760053406876/GaleanaStandard-Light.ttf")
+        format("truetype");
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Galeana";
+    src: url("https://static1.squarespace.com/static/66d36794d3823c35349db01a/t/68e848a9ba654174357b34de/1760053417251/GaleanaStandard-Regular.ttf")
+        format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Galeana";
+    src: url("https://static1.squarespace.com/static/66d36794d3823c35349db01a/t/68e84832314e5873c5349fa7/1760053298347/GaleanaStandard-Bold.ttf")
+        format("truetype");
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Galeana";
+    src: url("https://static1.squarespace.com/static/66d36794d3823c35349db01a/t/68e8483b3ca1145c5d8f83d5/1760053307246/GaleanaStandard-Heavy.ttf")
+        format("truetype");
+    font-weight: 900;
+    font-style: normal;
+}
+
+/* Galeana Fin */
+
+/* Galeana Italic*/
+@font-face {
+    font-family: "Galeana";
+    src: url("https://static1.squarespace.com/static/66d36794d3823c35349db01a/t/68e848caf952841f030588fa/1760053451269/GaleanaStandard-ThinItalic.ttf")
+        format("truetype");
+    font-weight: 100;
+    font-style: italic;
+}
+@font-face {
+    font-family: "Galeana";
+    src: url("https://static1.squarespace.com/static/66d36794d3823c35349db01a/t/68e848a31c9ad524fe84efcb/1760053412129/GaleanaStandard-LightItalic.ttf")
+        format("truetype");
+    font-weight: 300;
+    font-style: italic;
+}
+@font-face {
+    font-family: "Galeana";
+    src: url("https://static1.squarespace.com/static/66d36794d3823c35349db01a/t/68e848af26a8aa2d57a0c677/1760053423423/GaleanaStandard-RegularItalic.ttf")
+        format("truetype");
+    font-weight: 400;
+    font-style: italic;
+}
+@font-face {
+    font-family: "Galeana";
+    src: url("https://static1.squarespace.com/static/66d36794d3823c35349db01a/t/68e84836e9f85b7e4a069a95/1760053302445/GaleanaStandard-BoldItalic.ttf")
+        format("truetype");
+    font-weight: 700;
+    font-style: italic;
+}
+@font-face {
+    font-family: "Galeana";
+    src: url("https://static1.squarespace.com/static/66d36794d3823c35349db01a/t/68e8483f401e4b7ec622be9b/1760053311328/GaleanaStandard-HeavyItalic.ttf")
+        format("truetype");
+    font-weight: 900;
+    font-style: italic;
+}
+/* Galeana Italic Fin */
+
+
+/* ------------------------------------------------------------------------ */
+
+
+/* Galeana Compressed */
+@font-face {
+    font-family: "Galeana-Compressed";
+    src: url("https://static1.squarespace.com/static/66d36794d3823c35349db01a/t/68e841914b016c76834adc6a/1760051601196/GaleanaCompressed-Thin.ttf")
+        format("truetype");
+    font-weight: 100;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Galeana-Compressed";
+    src: url("https://static1.squarespace.com/static/66d36794d3823c35349db01a/t/68e8417e781e517ab3319ebc/1760051582458/GaleanaCompressed-Light.ttf")
+        format("truetype");
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Galeana-Compressed";
+    src: url("https://static1.squarespace.com/static/66d36794d3823c35349db01a/t/68e8418958b85e776d8950b4/1760051593218/GaleanaCompressed-Regular.ttf")
+        format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Galeana-Compressed";
+    src: url("https://static1.squarespace.com/static/66d36794d3823c35349db01a/t/68e841140591cf0c19d3aca4/1760051477165/GaleanaCompressed-Bold.ttf")
+        format("truetype");
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Galeana-Compressed";
+    src: url("https://static1.squarespace.com/static/66d36794d3823c35349db01a/t/68e8413746c3f34b51d6daec/1760051511546/GaleanaCompressed-Heavy.ttf")
+        format("truetype");
+    font-weight: 900;
+    font-style: normal;
+}
+
+/* Galeana Fin */
+
+/* Galeana Italic*/
+@font-face {
+    font-family: "Galeana-Compressed";
+    src: url("https://static1.squarespace.com/static/66d36794d3823c35349db01a/t/68e84194d6a1ae13ee8c5e10/1760051605097/GaleanaCompressed-ThinItalic.ttf")
+        format("truetype");
+    font-weight: 100;
+    font-style: italic;
+}
+@font-face {
+    font-family: "Galeana-Compressed";
+    src: url("https://static1.squarespace.com/static/66d36794d3823c35349db01a/t/68e84183dd19612e3cc97251/1760051588102/GaleanaCompressed-LightItalic.ttf")
+        format("truetype");
+    font-weight: 300;
+    font-style: italic;
+}
+@font-face {
+    font-family: "Galeana-Compressed";
+    src: url("https://static1.squarespace.com/static/66d36794d3823c35349db01a/t/68e8418d6817973a2581e262/1760051597169/GaleanaCompressed-RegularItalic.ttf")
+        format("truetype");
+    font-weight: 400;
+    font-style: italic;
+}
+@font-face {
+    font-family: "Galeana-Compressed";
+    src: url("https://static1.squarespace.com/static/66d36794d3823c35349db01a/t/68e8463560abff19f007c67e/1760052789857/GaleanaCondensed-BoldItalic.ttf")
+        format("truetype");
+    font-weight: 700;
+    font-style: italic;
+}
+@font-face {
+    font-family: "Galeana-Compressed";
+    src: url("https://static1.squarespace.com/static/66d36794d3823c35349db01a/t/68e846416817973a2582c1e1/1760052802106/GaleanaCondensed-HeavyItalic.ttf")
+        format("truetype");
+    font-weight: 900;
+    font-style: italic;
+}
+/* Galeana Compressed Italic Fin */
+/* ------------------------------------------------------------------------ */
+/* Galeana Condensed */
+@font-face {
+    font-family: "Galeana-Condensed";
+    src: url("https://static1.squarespace.com/static/66d36794d3823c35349db01a/t/68e846e2043e0a077da5e37c/1760052962396/GaleanaCondensed-Thin.ttf")
+        format("truetype");
+    font-weight: 100;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Galeana-Condensed";
+    src: url("https://static1.squarespace.com/static/66d36794d3823c35349db01a/t/68e846c275bed40620b4605f/1760052931024/GaleanaCondensed-Light.ttf")
+        format("truetype");
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Galeana-Condensed";
+    src: url("https://static1.squarespace.com/static/66d36794d3823c35349db01a/t/68e846d3938c6524d64493e7/1760052947190/GaleanaCondensed-Regular.ttf")
+        format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Galeana-Condensed";
+    src: url("https://static1.squarespace.com/static/66d36794d3823c35349db01a/t/68e8462e316553107ab7578e/1760052782328/GaleanaCondensed-Bold.ttf")
+        format("truetype");
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Galeana-Condensed";
+    src: url("https://static1.squarespace.com/static/66d36794d3823c35349db01a/t/68e8463c9c809756ab07ff7c/1760052796832/GaleanaCondensed-Heavy.ttf")
+        format("truetype");
+    font-weight: 900;
+    font-style: normal;
+}
+
+/* Galeana Condensed Fin */
+
+/* Galeana Condensed Italic*/
+@font-face {
+    font-family: "Galeana-Condensed";
+    src: url("https://static1.squarespace.com/static/66d36794d3823c35349db01a/t/68e846e65fdc8c354ed594ce/1760052966844/GaleanaCondensed-ThinItalic.ttf")
+        format("truetype");
+    font-weight: 100;
+    font-style: italic;
+}
+@font-face {
+    font-family: "Galeana-Condensed";
+    src: url("https://static1.squarespace.com/static/66d36794d3823c35349db01a/t/68e846c70591cf0c19d4d589/1760052935961/GaleanaCondensed-LightItalic.ttf")
+        format("truetype");
+    font-weight: 300;
+    font-style: italic;
+}
+@font-face {
+    font-family: "Galeana-Condensed";
+    src: url("https://static1.squarespace.com/static/66d36794d3823c35349db01a/t/68e846da938c6524d6449404/1760052954263/GaleanaCondensed-RegularItalic.ttf")
+        format("truetype");
+    font-weight: 400;
+    font-style: italic;
+}
+@font-face {
+    font-family: "Galeana-Condensed";
+    src: url("https://static1.squarespace.com/static/66d36794d3823c35349db01a/t/68e8462e316553107ab7578e/1760052782328/GaleanaCondensed-Bold.ttf")
+        format("truetype");
+    font-weight: 700;
+    font-style: italic;
+}
+@font-face {
+    font-family: "Galeana-Condensed";
+    src: url("https://static1.squarespace.com/static/66d36794d3823c35349db01a/t/68e846416817973a2582c1e1/1760052802106/GaleanaCondensed-HeavyItalic.ttf")
+        format("truetype");
+    font-weight: 900;
+    font-style: italic;
+}
+/* Galeana Condensed Italic Fin */
+
+/* ------------------------------------------------------------------------ */
+
+/* Galeana Extended */
+@font-face {
+    font-family: "Galeana-Extended";
+    src: url("https://static1.squarespace.com/static/66d36794d3823c35349db01a/t/68e847f291335e17ad5b4d29/1760053234370/GaleanaExtended-Thin.ttf")
+        format("truetype");
+    font-weight: 100;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Galeana-Extended";
+    src: url("https://static1.squarespace.com/static/66d36794d3823c35349db01a/t/68e847c37b8e5b6cf540b41f/1760053187609/GaleanaExtended-Light.ttf")
+        format("truetype");
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Galeana-Extended";
+    src: url("https://static1.squarespace.com/static/66d36794d3823c35349db01a/t/68e847de7b8e5b6cf540b49b/1760053215033/GaleanaExtended-Regular.ttf")
+        format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Galeana-Extended";
+    src: url("https://static1.squarespace.com/static/66d36794d3823c35349db01a/t/68e84759fe070158881eb3df/1760053081367/GaleanaExtended-Bold.ttf")
+        format("truetype");
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Galeana-Extended";
+    src: url("https://static1.squarespace.com/static/66d36794d3823c35349db01a/t/68e84762dd19612e3cca6c03/1760053090416/GaleanaExtended-Heavy.ttf")
+        format("truetype");
+    font-weight: 900;
+    font-style: normal;
+}
+
+/* Galeana Extended Fin */
+
+/* Galeana Extended Italic*/
+@font-face {
+    font-family: "Galeana-Extended";
+    src: url("https://static1.squarespace.com/static/66d36794d3823c35349db01a/t/68e847fe781e517ab332d348/1760053246439/GaleanaExtended-ThinItalic.ttf")
+        format("truetype");
+    font-weight: 100;
+    font-style: italic;
+}
+@font-face {
+    font-family: "Galeana-Extended";
+    src: url("https://static1.squarespace.com/static/66d36794d3823c35349db01a/t/68e847cfc211556b051c00fd/1760053199178/GaleanaExtended-LightItalic.ttf")
+        format("truetype");
+    font-weight: 300;
+    font-style: italic;
+}
+@font-face {
+    font-family: "Galeana-Extended";
+    src: url("https://static1.squarespace.com/static/66d36794d3823c35349db01a/t/68e847edabc10d6380db21af/1760053229176/GaleanaExtended-RegularItalic.ttf")
+        format("truetype");
+    font-weight: 400;
+    font-style: italic;
+}
+@font-face {
+    font-family: "Galeana-Extended";
+    src: url("https://static1.squarespace.com/static/66d36794d3823c35349db01a/t/68e8475d314e5873c5348483/1760053085400/GaleanaExtended-BoldItalic.ttf")
+        format("truetype");
+    font-weight: 700;
+    font-style: italic;
+}
+@font-face {
+    font-family: "Galeana-Extended";
+    src: url("https://static1.squarespace.com/static/66d36794d3823c35349db01a/t/68e84768cf91b321b8ad2846/1760053096402/GaleanaExtended-HeavyItalic.ttf")
+        format("truetype");
+    font-weight: 900;
+    font-style: italic;
+}
+/* Galeana Extended Italic Fin */
+
+/* ------------------------------------------------------------------------ */
+
+
+
+
+
+
+
+@font-face {
+            font-family: 'Libreto';
+            src: url('https://static1.squarespace.com/static/66d36794d3823c35349db01a/t/68d43d2ce082046445dcc7d2/1758739757204/Libreto-Thin.ttf') format('truetype');
+            font-weight: 100;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Libreto';
+            src: url('https://static1.squarespace.com/static/66d36794d3823c35349db01a/t/68d43d2cd09ff81101f0467f/1758739757207/Libreto-ThinItalic.ttf') format('truetype');
+            font-weight: 100;
+            font-style: italic;
+        }
+        @font-face {
+            font-family: 'Libreto';
+            src: url('https://static1.squarespace.com/static/66d36794d3823c35349db01a/t/68d3ad1202ec55790f8ffbc5/1758702867211/Libreto-Light.ttf') format('truetype');
+            font-weight: 300;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Libreto';
+            src: url('https://static1.squarespace.com/static/66d36794d3823c35349db01a/t/68d3ad12f584cf52224a5e9f/1758702867649/Libreto-LightItalic.ttf') format('truetype');
+            font-weight: 300;
+            font-style: italic;
+        }
+        @font-face {
+            font-family: 'Libreto';
+            src: url('https://static1.squarespace.com/static/66d36794d3823c35349db01a/t/68d3adaf270e5a52b310c462/1758703023767/Libreto-Regular.ttf') format('truetype');
+            font-weight: 400;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Libreto';
+            src: url('https://static1.squarespace.com/static/66d36794d3823c35349db01a/t/68d441e742567a24a55c7f8d/1758740967905/Libreto-RegularItalic.ttf') format('truetype');
+            font-weight: 400;
+            font-style: italic;
+        }
+        @font-face {
+            font-family: 'Libreto';
+            src: url('https://static1.squarespace.com/static/66d36794d3823c35349db01a/t/68d3ad120bc5d41e5fac256e/1758702867400/Libreto-Bold.ttf') format('truetype');
+            font-weight: 700;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Libreto';
+            src: url('https://static1.squarespace.com/static/66d36794d3823c35349db01a/t/68d3ad12760b553eee629360/1758702867466/Libreto-BoldItalic.ttf') format('truetype');
+            font-weight: 700;
+            font-style: italic;
+        }
+        @font-face {
+            font-family: 'Libreto';
+            src: url('https://static1.squarespace.com/static/66d36794d3823c35349db01a/t/68d3ad122571eb71bcda4c77/1758702867017/Libreto-Black.ttf') format('truetype');
+            font-weight: 900;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Libreto';
+            src: url('https://static1.squarespace.com/static/66d36794d3823c35349db01a/t/68d3ad12e177b2696359dd84/1758702867373/Libreto-BlackItalic.ttf') format('truetype');
+            font-weight: 900;
+            font-style: italic;
+        }
+
+
+@font-face {
+    font-family: 'Poster';
+    src:
+    url(https://static1.squarespace.com/static/66d36794d3823c35349db01a/t/66ea21b514d2e24b48a44cf6/1726620085717/EtymosWebDisplay-Poster.ttf);
+ }
+
+@font-face {
+  font-family: 'Balazo';
+  src:
+  url(https://static1.squarespace.com/static/66d36794d3823c35349db01a/t/66ea21b547b9b15a96f6cfa3/1726620085710/EtymosWebDisplay-Balazo.ttf);
+}
+
+@font-face {
+  font-family: 'Regular';
+  src:
+  url(https://static1.squarespace.com/static/66d36794d3823c35349db01a/t/66ea21b54041de5701f1792d/1726620085712/EtymosWeb-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'Italica';
+  src:
+  url(https://static1.squarespace.com/static/66d36794d3823c35349db01a/t/66ea21b511152818b8355166/1726620085714/EtymosWeb-Italica.ttf);
+}
+
+@font-face {
+  font-family: 'Bold';
+  src:
+  url(https://static1.squarespace.com/static/66d36794d3823c35349db01a/t/66ea21b5b0f07b084512005c/1726620085511/EtymosWeb-Bold.ttf);
+}
+
+
+/* Estilado */
+ h1 {
+    font-family: 'Poster';
+}
+
+h2 {
+   font-family: 'Balazo';
+}
+
+h3 {
+   font-family: 'Bold';
+}
+
+h4 {
+   font-family: 'Poster';
+   text-transform: uppercase;
+   letter-spacing: 0.075em;
+}
+
+p {
+   font-family: 'Regular';
+}
+
+.sqsrte-small {
+font-family: 'Italica';
+}
+
+
+/* Navegador */
+// Site Title //
+.header-title-text a {
+  font-family: Regular !important;
+}
+
+// Site Navigation //
+.header-nav-item a {
+  font-family: Regular !important;
+}
+
+// Button //
+.header-actions-action .btn {
+  font-family: Regular !important;
+}
+
+// Announcement Bar //
+.sqs-announcement-bar-url a {
+  font-family: Regular !important;
+}
+
+// Boton cabecera movil //
+.header-menu-nav-item-content {
+  font-family: Regular !important;
+}
+
+
+/* Proyectos */
+// Blog Page Titles //
+.portfolio-title {
+  font-family: Bold !important;
+}
+
+/* Blog*/
+// Blog Page Titles //
+.blog-title {
+  font-family: Poster !important;
+}
+
+// Blog Page Descriptions //
+.blog-excerpt p {
+  font-family: Regular !important;
+}
+
+// Blog Page Read More Link //
+.blog-more-link {
+  font-family: Italica !important;
+}
+
+// Blog Post Entry Title //
+ .blog-item-title h1.entry-title {
+  font-family: Poster !important;
+}
+
+// Blog Page Date //
+.blog-date {
+  font-family: Regular !important;
+  font-size: 1.6rem;
+  }
+
+// Blog Meta info //
+.blog-meta-item, .blog-author-name {
+    font-family: Regular !important;
+    }
+
+  /* Botones*/
+  // Primary Button //
+  .sqs-button-element--primary {
+    font-family: Bold !important;
+  }
+
+  // Secondary Button //
+  .sqs-button-element--secondary {
+    font-family: Bold !important;
+  }
+
+  // Tertiary Button //
+  .sqs-button-element--tertiary {
+    font-family: Regular !important;
+  }
+
+  // Siguiente proyecto //
+  .item-pagination-title {
+    font-family: Regular !important;
+  }
+
+.sqs-site-style-form .field-list .caption-text{
+      font-family: Regular !important;
+}
+
+.sqs-site-style-form .field-list .title{
+        font-family: Regular !important;
+}
+
+.description {
+          font-family: Regular !important;
+}
+
+/* Estilos para enlaces dentro de acordeones */
+.sqs-block-accordion .accordion-item__description a {
+  transition: all 0.4s ease;
+  text-decoration: none;
+  padding: 8px 16px;
+  background-color: #000;
+  color: white !important;
+  border-radius: 4px;
+  display: inline-block;
+  margin: 10px 0;
+}
+
+.sqs-block-accordion .accordion-item__description a:hover {
+  background-color: #333;
+  transform: translateY(-2px);
+}
+
+/* Si quieres mantener la animación de fade específica */
+.sqs-block-accordion .accordion-item__description p {
+  white-space: pre-wrap;
+  transition-timing-function: ease;
+  transition-duration: 0.4s;
+  transition-delay: 0.189474s;
+}

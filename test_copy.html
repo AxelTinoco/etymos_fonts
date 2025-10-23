@@ -1,0 +1,543 @@
+<style>
+    .font-tester-container {
+        max-width: 1800px;
+        margin: 0 auto;
+        padding: 30px;
+        font-family: 'Regular', Arial, sans-serif;
+    }
+
+    .main-container {
+        display: flex;
+        gap: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .body-control-container{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .input-main-container{
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+    }
+
+    .text-container {
+        border-radius: 16px;
+        background: #202020;
+        min-width: 515px;
+        width: 50%;
+        height: 180px;
+        flex-shrink: 0;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 48px;
+        color: white;
+        padding: 4rem;
+        font-family: 'Libreto', Arial, sans-serif;
+    }
+
+    .button-main-container{
+        display: flex;
+        width: 40%;
+        gap: 2rem;
+    }
+
+    .button-container-left {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .button-main {
+        border-radius: 8px;
+        background: #f1f1f1;
+        min-width: 240px;
+        width: 100%;;
+        height: 55px;
+        padding: 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .button-main:hover {
+        background: #e0e0e0;
+    }
+
+    .button-main.active {
+        background-color: #202020;
+        color: white;
+    }
+
+    .controls-container {
+        background-color: #F1F1F1;
+        margin-bottom: 2rem;
+        border-radius: 16px;
+    }
+
+    .controls {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        padding: 20px;
+        border-radius: 15px;
+        align-items: center;
+    }
+
+    .control-group {
+        display: flex;
+        flex-direction: row;
+        gap: 8px;
+    }
+
+    .container-selects {
+        display: flex;
+        justify-content: baseline;
+        gap: 1rem;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .container-multiple-controls {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 1rem;
+        height: 20px;
+        background-color: white;
+        border-radius: 8px;
+        padding: 10px;
+    }
+
+    .button-secondary {
+        border-radius: 8px;
+        background: #202020;
+        width: fit-content;
+        height: 40px;
+        padding: 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border: none;
+        color: white;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .button-secondary:hover {
+        background: #333;
+    }
+
+    select,
+    input[type="range"] {
+        padding: 10px;
+        border: 2px solid #ddd;
+        border-radius: 10px;
+        background: white;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+        font-family: 'Regular', Arial, sans-serif;
+    }
+
+    select option {
+        font-family: 'Libreto', Arial, sans-serif;
+        padding: 8px;
+    }
+
+    select option[value="100"] {
+        font-weight: 100;
+    }
+
+    select option[value="300"] {
+        font-weight: 300;
+    }
+
+    select option[value="400"] {
+        font-weight: 400;
+    }
+
+    select option[value="700"] {
+        font-weight: 700;
+    }
+
+    select option[value="900"] {
+        font-weight: 900;
+    }
+
+    select option[value="100-italic"] {
+        font-weight: 100;
+        font-style: italic;
+    }
+
+    select option[value="300-italic"] {
+        font-weight: 300;
+        font-style: italic;
+    }
+
+    select option[value="400-italic"] {
+        font-weight: 400;
+        font-style: italic;
+    }
+
+    select option[value="700-italic"] {
+        font-weight: 700;
+        font-style: italic;
+    }
+
+    select option[value="900-italic"] {
+        font-weight: 900;
+        font-style: italic;
+    }
+
+    input[type="range"] {
+        padding: 0px;
+        width: 80px;
+        -webkit-appearance: none;
+        height: 0px;
+        background: #ddd;
+        border-radius: 3px;
+    }
+
+    input[type="range"]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        width: 10px;
+        height: 10px;
+        background: #202020;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    input[type="range"]::-moz-range-thumb {
+        height: 10px;
+        width: 10px;
+        border-radius: 50%;
+        background: #202020;
+        cursor: pointer;
+        border: 2px solid #202020;
+        transition: all 0.3s ease;
+    }
+
+    .editor-container {
+        background: #F1F1F1;
+        border-radius: 15px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        margin-top: 20px;
+    }
+
+    .editor {
+        width: 100%;
+        min-height: 400px;
+        padding: 30px;
+        border: none;
+        outline: none;
+        font-size: 18px;
+        line-height: 1.6;
+        resize: vertical;
+        background: transparent;
+        transition: all 0.3s ease;
+        font-family: Arial, sans-serif;
+        /* Agregadas las propiedades para el word wrap */
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        white-space: pre-wrap;
+        box-sizing: border-box;
+    }
+
+    @media (max-width: 768px) {
+        .font-tester-container {
+            padding: 20px;
+        }
+
+        .main-container {
+            flex-direction: column;
+        }
+
+        .text-container {
+            width: 100%;
+        }
+
+        .button-main {
+            width: 100%;
+        }
+
+        .controls {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+
+<div class="font-tester-container">
+    <div class="main-container">
+        <div class="text-container">
+            <p class="text-block" style="font-family: " Libreto";"">
+                AaBbCc<br>
+                0123456789<br>
+                {(!¿@#$!?)}
+            </p>
+        </div>
+
+
+        <div class="button-main-container">
+            <div class="button-container-left">
+                <button class="button-main" onclick="applyWeight(100, false)" data-weight="100" data-italic="false">
+                    <p style="font-weight:100; font-family:'Libreto';">Thin</p>
+                </button>
+                <button class="button-main" onclick="applyWeight(300, false)" data-weight="300" data-italic="false">
+                    <span style="font-weight:300; font-family:'Libreto';">Light</span>
+                </button>
+                <button class="button-main active" onclick="applyWeight(400, false)" data-weight="400" data-italic="false">
+                    <span style="font-weight:400; font-family:'Libreto';">Regular</span>
+                </button>
+                <button class="button-main" onclick="applyWeight(700, false)" data-weight="700" data-italic="false">
+                    <span style="font-weight:700; font-family:'Libreto';">Bold</span>
+                </button>
+                <button class="button-main" onclick="applyWeight(900, false)" data-weight="900" data-italic="false">
+                    <span style="font-weight:900; font-family:'Libreto';">Black</span>
+                </button>
+            </div>
+            <div class="button-container-left">
+                <button class="button-main" onclick="applyWeight(100, true)" data-weight="100" data-italic="true">
+                    <span style="font-weight:100; font-family:'Libreto'; font-style:italic;">Thin Italic</span>
+                </button>
+                <button class="button-main" onclick="applyWeight(300, true)" data-weight="300" data-italic="true">
+                    <span style="font-weight:300; font-family:'Libreto'; font-style:italic;">Ligth Italic</span>
+                </button>
+                <button class="button-main" onclick="applyWeight(400, true)" data-weight="400" data-italic="true">
+                    <span style="font-weight:400; font-family:'Libreto'; font-style:italic;">Regular Italic</span>
+                </button>
+                <button class="button-main" onclick="applyWeight(700, true)" data-weight="700" data-italic="true">
+                    <span style="font-weight:700; font-family:'Libreto'; font-style:italic;">Bold Italic</span>
+                </button>
+                <button class="button-main" onclick="applyWeight(900, true)" data-weight="900" data-italic="true">
+                    <span style="font-weight:900; font-family:'Libreto'; font-style:italic;">Black Italic</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="controls-container">
+        <div class="controls">
+            <div class="body-control-container">
+                <div class="control-group">
+                    <div class="container-selects">
+                        <button class="button-secondary">
+                            <span>Libreto</span>
+                        </button>
+                        <select id="fontWeight" onchange="updateFont()">
+                            <option value="100" style="font-weight:100; font-family:'Libreto';">Thin</option>
+                            <option value="300" style="font-weight:300; font-family:'Libreto';">Light</option>
+                            <option value="400" style="font-weight:400; font-family:'Libreto';" selected>Regular</option>
+                            <option value="700" style="font-weight:700; font-family:'Libreto';">Bold</option>
+                            <option value="900" style="font-weight:900; font-family:'Libreto';">Black</option>
+                            <option value="100-italic" style="font-weight:100; font-family:'Libreto'; font-style:italic;">
+                                Thin Italic</option>
+                            <option value="300-italic" style="font-weight:300; font-family:'Libreto'; font-style:italic;">
+                                Light Italic</option>
+                            <option value="400-italic" style="font-weight:400; font-family:'Libreto'; font-style:italic;">
+                                Regular Italic</option>
+                            <option value="700-italic" style="font-weight:700; font-family:'Libreto'; font-style:italic;">
+                                Bold Italic</option>
+                            <option value="900-italic" style="font-weight:900; font-family:'Libreto'; font-style:italic;">
+                                Black Italic</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="input-main-container">
+                    <div class="control-group">
+                <div class="container-multiple-controls">
+                    <label for="fontSize">Tamaño</label>
+                    <input type="range" id="fontSize" min="8" max="72" value="72" oninput="updateFont()">
+                    <span id="fontSizeValue">72</span>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <div class="container-multiple-controls">
+                    <label for="lineHeight">Leading</label>
+                    <input type="range" id="lineHeight" min="0.8" max="3" step="0.1" value="1.6" oninput="updateFont()">
+                    <span id="lineHeightValue">1.6</span>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <div class="container-multiple-controls">
+                    <label for="spacing">Espaciado</label>
+                    <input type="range" id="spacing" min="-2" max="5" step="0.1" value="0" oninput="updateFont()">
+                    <span id="spacingValue">0</span>
+                </div>
+            </div>
+                </div>
+
+            </div>
+
+
+            
+        </div>
+
+        <div class="editor-container">
+            <textarea class="editor" id="textEditor" placeholder="">El veloz murciélago hindú vio al zorro marrón saltar con torpeza sobre un perro dormido y pensó: “handgloves”. Nadie entendió si era una orden, una idea o sólo una excusa para parecer profundo.</textarea>
+        </div>
+
+    </div>
+
+
+    <div class="controls-container">
+        <div class="controls">
+            <div class="control-group">
+                <div class="container-selects">
+                    <button class="button-secondary">
+                        <span>Libreto</span>
+                    </button>
+                    <select id="fontWeightSecond" onchange="updateFont()">
+                        <option value="100">Thin</option>
+                        <option value="300">Light</option>
+                        <option value="400" selected>Regular</option>
+                        <option value="700">Bold</option>
+                        <option value="900">Black</option>
+                        <option value="100-italic">Thin Italic</option>
+                        <option value="300-italic">Light Italic</option>
+                        <option value="400-italic">Regular Italic</option>
+                        <option value="700-italic">Bold Italic</option>
+                        <option value="900-italic">Black Italic</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="control-group" style="justify-content: flex-end;">
+                <div class="container-multiple-controls">
+                    <label for="fontSizeSecond">Tamaño</label>
+                    <input type="range" id="fontSizeSecond" min="8" max="72" value="18" oninput="updateFont()">
+                    <span id="fontSizeSecondValue">18</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="editor-container">
+            <textarea class="editor" id="textEditorSecond"
+                placeholder="">Durante el verano, Xavier volvió de Quito con una caja de fósiles, un violín y varios dibujos que mezclaban figuras humanas con animales imaginarios. Julia, su amiga fotógrafa, quiso retratar cada objeto bajo una luz distinta para comprobar cómo cambiaban los volúmenes. “La forma es sólo el principio”, decía él mientras ajustaba la lupa sobre el zafiro más pequeño. Al fondo, una voz antigua repetía que el equilibrio entre rigor y curiosidad es lo que da sentido a cualquier oficio.
+Después de una pausa —de apenas 3 minutos—, alguien marcó en el cuaderno: «repetir el gesto, pero sin temblar». Era la nota nº 27 en una lista interminable de observaciones. Félix añadió un asterisco* junto a la palabra sombra y escribió al margen: El detalle importa más que el resultado.</textarea>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    const editor = document.getElementById("textEditor");
+    const editorSecond = document.getElementById("textEditorSecond");
+    const fontSize = document.getElementById("fontSize");
+    const fontSizeSecond = document.getElementById("fontSizeSecond");
+    const fontWeight = document.getElementById("fontWeight");
+    const fontWeightSecond = document.getElementById("fontWeightSecond");
+    const lineHeight = document.getElementById("lineHeight");
+    const spacingText = document.getElementById("spacing");
+    const previewText = document.querySelector(".text-block");
+
+    let currentItalic = false;
+
+    function updateFont() {
+        const size = fontSize.value;
+        const sizeSecond = fontSizeSecond.value;
+        const weightValue = fontWeight.value;
+        const weightSecondValue = fontWeightSecond.value;
+        const height = lineHeight.value;
+        const spacing = spacingText.value;
+
+        // Parse weight and italic for first editor
+        let weight, isItalic;
+        if (weightValue.includes('-italic')) {
+            weight = weightValue.replace('-italic', '');
+            isItalic = true;
+            currentItalic = true; // Update global italic state
+        } else {
+            weight = weightValue;
+            isItalic = false;
+            currentItalic = false; // Update global italic state
+        }
+
+        // Parse weight for second editor
+        let weightSecond, isItalicSecond;
+        if (weightSecondValue.includes('-italic')) {
+            weightSecond = weightSecondValue.replace('-italic', '');
+            isItalicSecond = true;
+        } else {
+            weightSecond = weightSecondValue;
+            isItalicSecond = false;
+        }
+
+        const fontFamily = "Libreto";
+
+        editor.style.fontSize = size + "px";
+        editor.style.fontWeight = weight;
+        editor.style.lineHeight = height;
+        editor.style.letterSpacing = spacing + "px";
+        editor.style.fontFamily = fontFamily;
+        editor.style.fontStyle = isItalic ? 'italic' : 'normal';
+
+        editorSecond.style.fontSize = sizeSecond + "px";
+        editorSecond.style.fontWeight = weightSecond;
+        editorSecond.style.fontFamily = fontFamily;
+        editorSecond.style.fontStyle = isItalicSecond ? 'italic' : 'normal';
+
+        previewText.style.fontWeight = weight;
+        previewText.style.fontStyle = currentItalic ? 'italic' : 'normal';
+        previewText.style.fontFamily = fontFamily;
+
+        document.getElementById("fontSizeValue").textContent = size;
+        document.getElementById("fontSizeSecondValue").textContent = sizeSecond;
+        document.getElementById("lineHeightValue").textContent = height;
+        document.getElementById("spacingValue").textContent = spacing;
+
+
+        updateWeightButtons(weight, currentItalic);
+    }
+
+    function applyWeight(weight, isItalic) {
+        // Update the select to match the button selection
+        if (isItalic) {
+            fontWeight.value = weight + '-italic';
+        } else {
+            fontWeight.value = weight;
+        }
+        currentItalic = isItalic;
+        updateFont();
+    }
+
+    function updateWeightButtons(activeWeight, activeItalic) {
+        document.querySelectorAll(".button-main").forEach(button => {
+            const buttonWeight = button.getAttribute("data-weight");
+            const buttonItalic = button.getAttribute("data-italic") === 'true';
+            if (buttonWeight == activeWeight && buttonItalic === activeItalic) {
+                button.classList.add("active");
+            } else {
+                button.classList.remove("active");
+            }
+        });
+    }
+
+    updateFont();
+
+    document.addEventListener("keydown", function (e) {
+        if (e.ctrlKey || e.metaKey) {
+            switch (e.key) {
+                case "1": e.preventDefault(); applyWeight(100, false); break;
+                case "2": e.preventDefault(); applyWeight(300, false); break;
+                case "3": e.preventDefault(); applyWeight(400, false); break;
+                case "4": e.preventDefault(); applyWeight(700, false); break;
+                case "5": e.preventDefault(); applyWeight(900, false); break;
+            }
+        }
+    });
+</script>

@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      /* Import Libreto font from Squarespace or local files */
+      @font-face {
+        font-family: "Libreto";
+        src: url("path/to/libreto-thin.woff2") format("woff2"),
+          url("path/to/libreto-thin.woff") format("woff");
+        font-weight: 100;
+        font-style: normal;
+      }
+      @font-face {
+        font-family: "Libreto";
+        src: url("path/to/libreto-light.woff2") format("woff2"),
+          url("path/to/libreto-light.woff") format("woff");
+        font-weight: 300;
+        font-style: normal;
+      }
+      @font-face {
+        font-family: "Libreto";
+        src: url("path/to/libreto-regular.woff2") format("woff2"),
+          url("path/to/libreto-regular.woff") format("woff");
+        font-weight: 400;
+        font-style: normal;
+      }
+      @font-face {
+        font-family: "Libreto";
+        src: url("path/to/libreto-medium.woff2") format("woff2"),
+          url("path/to/libreto-medium.woff") format("woff");
+        font-weight: 500;
+        font-style: normal;
+      }
+      @font-face {
+        font-family: "Libreto";
+        src: url("path/to/libreto-bold.woff2") format("woff2"),
+          url("path/to/libreto-bold.woff") format("woff");
+        font-weight: 700;
+        font-style: normal;
+      }
+      @font-face {
+        font-family: "Libreto";
+        src: url("path/to/libreto-black.woff2") format("woff2"),
+          url("path/to/libreto-black.woff") format("woff");
+        font-weight: 900;
+        font-style: normal;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        min-height: 100vh;
+        padding: 20px;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 20px;
+        padding: 30px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(10px);
+      }
+
+      .main-container {
+        display: flex;
+        gap: 2rem;
+        margin-bottom: 2rem;
+      }
+
+      .header {
+        text-align: center;
+        margin-bottom: 30px;
+        color: #333;
+      }
+
+      .header h1 {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+        background: linear-gradient(45deg, #667eea, #764ba2);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .controls {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        padding: 20px;
+        border-radius: 15px;
+      }
+
+      .control-group {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .control-group label {
+        font-weight: bold;
+        color: #333;
+        font-size: 0.9rem;
+      }
+
+      .text-container {
+        border-radius: 16px;
+        background: #202020;
+        width: 515px;
+        height: 319px;
+        flex-shrink: 0;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 48px;
+        color: white;
+        padding: 4rem;
+        font-family: "Libreto", Arial, sans-serif;
+      }
+
+      .button-container-left,
+      .button-container-right {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .button-main {
+        border-radius: 8px;
+        background: #f1f1f1;
+        width: 240px;
+        height: 55px;
+        padding: 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .button-main:hover {
+        background: #e0e0e0;
+      }
+
+      .button-main.active {
+        background-color: #202020;
+        color: white;
+      }
+
+      .block-container {
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+      }
+
+      .button-secondary {
+        border-radius: 8px;
+        background: #202020;
+        width: fit-content;
+        height: 40px;
+        padding: 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border: none;
+        color: white;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .button-secondary:hover {
+        background: #333;
+      }
+
+      .container-selects {
+        display: flex;
+        justify-content: baseline;
+        gap: 1rem;
+        flex-direction: row;
+        align-items: center;
+      }
+
+      .container-multiple-controls {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 1rem;
+        height: 44px;
+        background-color: white;
+        border-radius: 8px;
+        padding: 10px;
+      }
+
+      select,
+      input[type="range"],
+      input[type="color"] {
+        padding: 10px;
+        border: 2px solid #ddd;
+        border-radius: 10px;
+        background: white;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+      }
+
+      input[type="range"] {
+        padding: 0px;
+        border: 2px solid #ddd;
+        border-radius: 10px;
+        background: white;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+        width: 80px;
+      }
+
+      select:focus,
+      input:focus {
+        outline: none;
+        border-color: #667eea;
+        box-shadow: 0 0 10px rgba(102, 126, 234, 0.3);
+      }
+
+      input[type="range"] {
+        -webkit-appearance: none;
+        height: 0px;
+        background: #ddd;
+        border-radius: 3px;
+      }
+
+      input[type="range"]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        width: 10px;
+        height: 10px;
+        background: #202020;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      input[type="range"]::-moz-range-thumb {
+        height: 10px;
+        width: 10px;
+        border-radius: 50%;
+        background: #202020;
+        cursor: pointer;
+        border: 2px solid #202020;
+        transition: all 0.3s ease;
+      }
+
+      input[type="range"]::-webkit-slider-thumb:hover {
+        background: #764ba2;
+        transform: scale(1.1);
+      }
+
+      .size-display {
+        font-size: 0.9rem;
+        color: #666;
+        text-align: center;
+        margin-top: 5px;
+      }
+
+      .editor-container {
+        background: white;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        border: 2px solid #eee;
+        transition: all 0.3s ease;
+        margin-top: 20px;
+      }
+
+      .editor-container:focus-within {
+        border-color: #667eea;
+        box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
+      }
+
+      .editor {
+        width: 100%;
+        min-height: 400px;
+        padding: 30px;
+        border: none;
+        outline: none;
+        font-size: 18px;
+        line-height: 1.6;
+        resize: vertical;
+        background: transparent;
+        transition: all 0.3s ease;
+        font-family: "Libreto", Arial, sans-serif;
+      }
+
+      .preset-buttons {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-bottom: 20px;
+        justify-content: center;
+      }
+
+      .preset-btn {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 25px;
+        background: linear-gradient(45deg, #667eea, #764ba2);
+        color: white;
+        cursor: pointer;
+        font-weight: bold;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      .preset-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+      }
+
+      .preset-btn:active {
+        transform: translateY(0);
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          padding: 20px;
+        }
+
+        .main-container {
+          flex-direction: column;
+        }
+
+        .text-container {
+          width: 100%;
+        }
+
+        .block-container {
+          flex-direction: column;
+          gap: 1rem;
+        }
+
+        .button-main {
+          width: 100%;
+        }
+
+        .controls {
+          grid-template-columns: 1fr;
+        }
+
+        .preset-buttons {
+          justify-content: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="main-container">
+        <div class="text-container">
+          <p class="text-block">
+            AaBbCc<br />
+            0123456789<br />
+            {(!¿@#$!?)}
+          </p>
+        </div>
+
+        <div class="block-container">
+          <div class="button-container-left">
+            <button
+              class="button-main"
+              onclick="applyWeight(100)"
+              data-weight="100"
+            >
+              <span>Thin</span>
+              <span>100</span>
+            </button>
+            <button
+              class="button-main"
+              onclick="applyWeight(300)"
+              data-weight="300"
+            >
+              <span>Light</span>
+              <span>300</span>
+            </button>
+            <button
+              class="button-main"
+              onclick="applyWeight(400)"
+              data-weight="400"
+            >
+              <span>Regular</span>
+              <span>400</span>
+            </button>
+            <button
+              class="button-main"
+              onclick="applyWeight(500)"
+              data-weight="500"
+            >
+              <span>Medium</span>
+              <span>500</span>
+            </button>
+            <button
+              class="button-main"
+              onclick="applyWeight(700)"
+              data-weight="700"
+            >
+              <span>Bold</span>
+              <span>700</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="controls">
+        <div class="control-group">
+          <div class="container-selects">
+            <button class="button-secondary" id="fontFamilyBtn">
+              <span>Libreto</span>
+            </button>
+            <select id="fontWeight" onchange="updateFont()">
+              <option value="100">Thin 100</option>
+              <option value="300">Light 300</option>
+              <option value="400" selected>Regular 400</option>
+              <option value="500">Medium 500</option>
+              <option value="700">Bold 700</option>
+              <option value="900">Black 900</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <div class="container-multiple-controls">
+            <label for="fontSize">Tamaño</label>
+            <input
+              type="range"
+              id="fontSize"
+              min="8"
+              max="72"
+              value="18"
+              oninput="updateFont()"
+            />
+            <span id="fontSizeValue">18</span>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <div class="container-multiple-controls">
+            <label for="lineHeight">Leading</label>
+            <input
+              type="range"
+              id="lineHeight"
+              min="0.8"
+              max="3"
+              step="0.1"
+              value="1.6"
+              oninput="updateFont()"
+            />
+            <span id="lineHeightValue">1.6</span>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <div class="container-multiple-controls">
+            <label for="spacing">Espaciado</label>
+            <input
+              type="range"
+              id="spacing"
+              min="-2"
+              max="5"
+              step="0.1"
+              value="0"
+              oninput="updateFont()"
+            />
+            <span id="spacingValue">0</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="editor-container">
+        <textarea
+          class="editor"
+          id="textEditor"
+          placeholder=""
+          oninput="updatePreview()"
+        >
+Somos una fundidora tipográfica</textarea
+        >
+      </div>
+
+      <div class="controls">
+        <div class="control-group">
+          <div class="container-selects">
+            <button class="button-secondary" id="fontFamilyBtn">
+              <span>Libreto</span>
+            </button>
+            <select id="fontWeight" onchange="updateFont()">
+              <option value="100">Thin 100</option>
+              <option value="300">Light 300</option>
+              <option value="400" selected>Regular 400</option>
+              <option value="500">Medium 500</option>
+              <option value="700">Bold 700</option>
+              <option value="900">Black 900</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <div class="container-multiple-controls">
+            <label for="fontSizeSecond">Tamaño</label>
+            <input
+              type="range"
+              id="fontSizeSecond"
+              min="8"
+              max="72"
+              value="18"
+              oninput="updateFont()"
+            />
+            <span id="fontSizeSecondValue">18</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="editor-container">
+        <textarea
+          class="editor"
+          id="textEditorSecond"
+          placeholder=""
+          oninput="updatePreview()"
+        >
+Somos una fundidora tipográfica y estudio de diseño con base en la CDMX. Nos motiva diseñar fuentes tipográficas de calidad con personalidad distintiva vinculadas a un fenómeno cultural o identitario, y que sirvan a profesionales de industrias creativas como voz gráfica de sus proyectos. Además del diseño de fuentes tipográficas, trabajamos en otros proyectos de diseño (logotipos, marca, editorial, etc.) que encuentren en nuestra experiencia tipográfica un valor significativo. nos gusta abordar cada proyecto con profundidad y rigor, aceptamos un número limitado y damos prioridad a los que requieren una solución tipográfica. Colaboramos con estudios y agencias de diseño que buscan precisión tipográfica en el desarrollo de sus proyectos. A menudo llegan a nosotros por un ajuste en un logotipo y descubren un método sólido para ampliar o mejorar su sistema gráfico. Nuestro enfoque es meticuloso, fundamentado y orientado a resultados estratégicos.</textarea
+        >
+      </div>
+    </div>
+
+    <script>
+      let currentFontFamily = "Libreto";
+      let isLibretoActive = true;
+
+      // Elements
+      const editor = document.getElementById("textEditor");
+      const editorSecond = document.getElementById("textEditorSecond");
+      const fontSize = document.getElementById("fontSize");
+      const fontSizeSecond = document.getElementById("fontSizeSecond");
+      const fontWeight = document.getElementById("fontWeight");
+      const lineHeight = document.getElementById("lineHeight");
+      const spacingText = document.getElementById("spacing");
+
+      function updateFont() {
+        const size = fontSize.value;
+        const sizeSecond = fontSizeSecond.value;
+        const weight = fontWeight.value;
+        const height = lineHeight.value;
+        const spacing = spacingText.value;
+
+        const fontFamily = isLibretoActive
+          ? "'Libreto', Arial, sans-serif"
+          : "Arial, sans-serif";
+
+        // Apply styles to editor
+        editor.style.fontSize = size + "px";
+        editor.style.fontWeight = weight;
+        editor.style.lineHeight = height;
+        editor.style.letterSpacing = spacing + "px";
+        editor.style.fontFamily = fontFamily;
+        editorSecond.style.fontSize = sizeSecond + "px";
+
+
+        // Apply styles to preview
+
+        // Update displays
+        document.getElementById("fontSizeValue").textContent = size;
+        document.getElementById("fontSizeSecondValue").textContent = sizeSecond;
+        document.getElementById("lineHeightValue").textContent = height;
+        document.getElementById("spacingValue").textContent = spacing;
+
+        // Update weight button states
+        updateWeightButtons(weight);
+      }
+
+      function applyWeight(weight) {
+        fontWeight.value = weight;
+        updateFont();
+      }
+
+      function updateWeightButtons(activeWeight) {
+        document.querySelectorAll(".button-main").forEach((button) => {
+          const buttonWeight = button.getAttribute("data-weight");
+          if (buttonWeight == activeWeight) {
+            button.classList.add("active");
+          } else {
+            button.classList.remove("active");
+          }
+        });
+      }
+
+      function updatePreview() {
+        // Update preview text with editor content if not empty
+        const editorContent = editor.value;
+        if (editorContent.trim()) {
+          previewText.innerHTML = editorContent
+            .split("\n")
+            .slice(0, 3)
+            .join("<br>");
+        } else {
+          previewText.innerHTML = "AaBbCc<br>0123456789<br>{(!¿@#$!?)}";
+        }
+      }
+
+      // Initialize
+      updateFont();
+
+      // Add keyboard shortcuts
+      document.addEventListener("keydown", function (e) {
+        if (e.ctrlKey || e.metaKey) {
+          switch (e.key) {
+            case "1":
+              e.preventDefault();
+              applyWeight(100);
+              break;
+            case "2":
+              e.preventDefault();
+              applyWeight(300);
+              break;
+            case "3":
+              e.preventDefault();
+              applyWeight(400);
+              break;
+            case "4":
+              e.preventDefault();
+              applyWeight(500);
+              break;
+            case "5":
+              e.preventDefault();
+              applyWeight(700);
+              break;
+            case "6":
+              e.preventDefault();
+              applyWeight(900);
+              break;
+            case "r":
+              e.preventDefault();
+              resetSettings();
+              break;
+          }
+        }
+      });
+
+      // Add hover effects
+      document.querySelectorAll("select, input").forEach((control) => {
+        control.addEventListener("mouseenter", function () {
+          this.style.transform = "scale(1.02)";
+        });
+
+        control.addEventListener("mouseleave", function () {
+          this.style.transform = "scale(1)";
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,252 @@
+<style>
+  .font-tester-container {
+    max-width: 1800px;
+    margin: 0 auto;
+    padding: 30px;
+    font-family: "Regular", Arial, sans-serif;
+  }
+
+  .main-container {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  /* Modal overlay */
+  .modal-overlay {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    z-index: 99999;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease,
+      background-color 0.3s ease;
+  }
+
+  .modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  /* Modal content */
+  .modal-content {
+    background-color: white;
+    padding: 40px;
+    border-radius: 8px;
+    max-width: 800px;
+    width: 90%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    transform: scale(0.7);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  .modal-overlay.active .modal-content {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  /* Close button */
+  .modal-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #666;
+    line-height: 1;
+  }
+
+  .modal-close:hover {
+    color: #000;
+  }
+
+  /* Modal text link */
+  .modal-trigger {
+    color: #0066cc;
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+  .modal-trigger:hover {
+    color: #004499;
+  }
+
+  /* Paragraph spacing */
+  .modal-content p {
+    margin-bottom: 1.2em;
+    line-height: 1.6;
+    text-align: justify;
+    color: #2F2D2C;
+    font-family: 'Balazo', Arial, sans-serif;
+
+  }
+
+  .modal-content p:last-of-type {
+    margin-bottom: 0;
+  }
+
+  .modal-content h2 {
+    margin-bottom: .5em !important;
+    margin-top: 0;
+    color: #2F2D2C;
+    font-family: 'Poster', Arial, sans-serif;
+    font-weight: 800;
+    font-size: 24px;
+  }
+
+  a{
+    text-decoration: none;
+  }
+</style>
+
+
+<!-- Modal -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal-content">
+    <button class="modal-close" id="closeModal">&times;</button>
+    <h2>Marianela Grajeda</h2>
+    <p>
+      Cuenta con estudios de posgrado en Cine Documental, así como formación en
+      museología, producción y desarrollo de instalaciones inmersivas e
+      interactivas, y nuevas tecnologías aplicadas al arte y la cultura. Es
+      Licenciada en Lenguajes Audiovisuales por la Universidad Autónoma de Nuevo
+      León, con estudios complementarios en fotografía por el Instituto de
+      Estudios Superiores de Tamaulipas y en artes plásticas por la Universidad
+      Autónoma de Tamaulipas. Especializada en gestión de proyectos creativos y
+      culturales, ha desarrollado su experiencia en la producción de medios
+      audiovisuales, logística y coordinación de eventos, y en la gestión de
+      equipos multidisciplinarios.
+    </p>
+    <p>
+      Se desempeñó como Coordinadora y Gestora de Proyectos en el Centro de
+      Cultura Digital de la Ciudad de México, donde supervisó la calidad del
+      programa cultural y facilitó la vinculación entre áreas internas y
+      organizaciones nacionales e internacionales como Apple, Microsoft, UNESCO,
+      UNICEF, el Consulado Británico y el Consulado de Quebec, entre otros
+      públicos y privados. Actualmente, trabaja como Studio Manager, brindando
+      soporte a las operaciones en América en OLIVER+, donde coordina
+      actividades con marcas globales como Unilever, Procter & Gamble, I Hop,
+      Morgan Stanley, Pernod Ricard y Lululemon.
+    </p>
+    <p><a href="https://www.linkedin.com/in/marianela-grajeda-138906ab/">Linkedin</a>| <a href="mailto:marianela@etymos.xyz">marianela@etymos.xyz</a></p>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modalOverlayJorge">
+  <div class="modal-content">
+    <button class="modal-close" id="closeModalJorge">&times;</button>
+    <h2>Jorge Alberto Martínez Martínez</h2>
+    <p>
+      Licenciado en Diseño Gráfico por el Instituto de Estudios Superiores de Tamaulipas y Maestro en Diseño Tipográfico por el Centro de Estudios Gestalt. Cuenta con estudios independientes en caligrafía, tipografía y diseño de marca.
+    </p>
+    <p>
+     Ha realizado proyectos de diseño gráfico, tipografía e ilustración en la Ciudad de México para Alpura, Tipografilia Estudios y en Grupo CIE, encargado de proyectos de identidad gráfica para eventos de Hyundai, Philip Morris, Grupo Modelo, FIFA, entre otros.
+    </p>
+    <p>Durante una estancia de casi 7 años en Puebla, trabajó como líder de proyectos de identidad y tipografía en el multipremiado estudio de diseño Enigma, donde fue responsable del diseño a medida de tipografías para las marcas Bitso, OCC, entre otras.</p>
+    <p>Paralelamente, ha sido profesor de licenciatura y ponente en distintas universidades del país.</p>
+    <p><a href="https://www.linkedin.com/in/jorgemartinezdisenador/">Linkedin</a> | <a href="mailto:jorge@etymos.xyz">jorge@etymos.xyz</a></p>
+  </div>
+</div>
+
+<script>
+  // Get modal elements - Marianela
+  const modalMarianela = document.getElementById("modalOverlay");
+  const closeModalBtnMarianela = document.getElementById("closeModal");
+  const openModalLinkMarianela = document.getElementById("yui_3_17_2_1_1760082529151_510");
+  const allModalLinksMarianela = document.querySelectorAll('a[href="#modal--marianela"]');
+
+  // Get modal elements - Jorge
+  const modalJorge = document.getElementById("modalOverlayJorge");
+  const closeModalBtnJorge = document.getElementById("closeModalJorge");
+  const openModalLinkJorge = document.getElementById("ID_DEL_ENLACE_JORGE"); // Reemplazar con el ID real
+  const allModalLinksJorge = document.querySelectorAll('a[href="#modal--jorge"]');
+
+  // MARIANELA - Open modal when clicking the link with specific ID
+  if (openModalLinkMarianela) {
+    openModalLinkMarianela.addEventListener("click", function (e) {
+      e.preventDefault();
+      modalMarianela.classList.add("active");
+    });
+  }
+
+  // MARIANELA - Open modal when clicking any link with href="#modal--marianela"
+  allModalLinksMarianela.forEach(function(link) {
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+      modalMarianela.classList.add("active");
+    });
+  });
+
+  // MARIANELA - Close modal when clicking the close button
+  if (closeModalBtnMarianela) {
+    closeModalBtnMarianela.addEventListener("click", function () {
+      modalMarianela.classList.remove("active");
+    });
+  }
+
+  // MARIANELA - Close modal when clicking outside the modal content
+  if (modalMarianela) {
+    modalMarianela.addEventListener("click", function (e) {
+      if (e.target === modalMarianela) {
+        modalMarianela.classList.remove("active");
+      }
+    });
+  }
+
+  // JORGE - Open modal when clicking the link with specific ID
+  if (openModalLinkJorge) {
+    openModalLinkJorge.addEventListener("click", function (e) {
+      e.preventDefault();
+      modalJorge.classList.add("active");
+    });
+  }
+
+  // JORGE - Open modal when clicking any link with href="#modal--jorge"
+  allModalLinksJorge.forEach(function(link) {
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+      modalJorge.classList.add("active");
+    });
+  });
+
+  // JORGE - Close modal when clicking the close button
+  if (closeModalBtnJorge) {
+    closeModalBtnJorge.addEventListener("click", function () {
+      modalJorge.classList.remove("active");
+    });
+  }
+
+  // JORGE - Close modal when clicking outside the modal content
+  if (modalJorge) {
+    modalJorge.addEventListener("click", function (e) {
+      if (e.target === modalJorge) {
+        modalJorge.classList.remove("active");
+      }
+    });
+  }
+
+  // Close any modal with Escape key
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") {
+      if (modalMarianela && modalMarianela.classList.contains("active")) {
+        modalMarianela.classList.remove("active");
+      }
+      if (modalJorge && modalJorge.classList.contains("active")) {
+        modalJorge.classList.remove("active");
+      }
+    }
+  });
+</script>
